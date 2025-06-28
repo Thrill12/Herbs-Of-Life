@@ -64,7 +64,7 @@ public class EventListeners implements Listener {
 
         int nutritionValue = Math.max(1, (int) (Foods.foodNutritionMap.getOrDefault(mat, -1) * multiplier));
 
-        player.sendMessage(maxFoodHistory + ", " + multiplier + ", " + nutritionValue);
+        //player.sendMessage(maxFoodHistory + ", " + multiplier + ", " + nutritionValue);
 
         if(nutritionValue >= 0){
             consumeEvent.setCancelled(true);
