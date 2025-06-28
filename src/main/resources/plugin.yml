@@ -1,0 +1,11 @@
+name: HerbsOfLife
+version: '1.0'
+main: org.thrill12.herbsOfLife.HerbsOfLife
+api-version: '1.21'
+authors: [ Andrei Patea ]
+
+commands:
+  hol:
+    description: Base command for the plugin
+    usage: /hol <command>
+    permission: hol.admin
