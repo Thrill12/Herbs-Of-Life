@@ -60,7 +60,7 @@ public class EventListeners implements Listener {
                 if (maxHealth != null) {
                     maxHealth.addModifier(new AttributeModifier(key, maxHealthBonus, AttributeModifier.Operation.ADD_NUMBER));
 
-                    TextComponent comp = Component.text("You feel rejuvenated... (+" + maxHealthBonus + " Hearts)")
+                    TextComponent comp = Component.text("You feel rejuvenated... (+" + String.valueOf((double)maxHealthBonus * 0.5) + " Hearts)")
                             .color(NamedTextColor.GOLD);
                     player.sendMessage(comp);
                 }
