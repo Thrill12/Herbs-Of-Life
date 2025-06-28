@@ -1,5 +1,6 @@
 package org.thrill12.herbsOfLife;
 
+import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import java.nio.file.Files;
@@ -16,6 +17,8 @@ public final class HerbsOfLife extends JavaPlugin {
         this.getCommand("hol").setExecutor(new Commands());
 
         getConfig().addDefault("maxFoodHistory", 10);
+        getConfig().addDefault("enableFoodHistory", true);
+        getConfig().addDefault("maxHealthBonus", 1);
 
         Storage.savePath = getDataPath() + Storage.savePath;
         Storage.historiesPath = getDataPath() + Storage.historiesPath;

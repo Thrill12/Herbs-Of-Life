@@ -1,6 +1,9 @@
 package org.thrill12.herbsOfLife;
 
 import org.bukkit.Bukkit;
+import org.bukkit.attribute.Attribute;
+import org.bukkit.attribute.AttributeInstance;
+import org.bukkit.attribute.AttributeModifier;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -9,6 +12,7 @@ import org.bukkit.plugin.java.JavaPlugin;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Locale;
 
@@ -89,6 +93,15 @@ public class Commands implements CommandExecutor {
 
         Storage.allPlayerHistories.replace(playerUID, new ArrayList<>());
 
-        sender.sendMessage("Reset food history for " + playerName + ".");
+        AttributeInstance maxHealth = player.getAttribute(Attribute.MAX_HEALTH);
+
+        for (Iterator<AttributeModifier> iterator = maxHealth.getModifiers().iterator(); iterator.hasNext(); ) {
+            AttributeModifier mod = iterator.next();
+            if (mod.getKey().toString().contains("hol-food-bonus")) {
+                maxHealth.removeModifier(mod);
+            }
+        }
+
+        sender.sendMessage("Reset food history and health for " + playerName + ".");
     }
 }

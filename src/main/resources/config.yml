@@ -1,4 +1,8 @@
+enableFoodHistory: true
+enableNutritionDecrease: true
+enableMaxHealthIncrease: true
 maxFoodHistory: 10
+maxHealthBonus: 1
 food-values:
   APPLE: 4
   GOLDEN_APPLE: 4

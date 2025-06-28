@@ -7,5 +7,5 @@ authors: [ Andrei Patea ]
 commands:
   hol:
     description: Base command for the plugin
-    usage: /hol <command>
+    usage: /hol <reload|reset|showHistory>
     permission: hol.admin

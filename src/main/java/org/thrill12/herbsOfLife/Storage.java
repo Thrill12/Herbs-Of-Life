@@ -1,5 +1,7 @@
 package org.thrill12.herbsOfLife;
 
+import org.bukkit.configuration.file.FileConfiguration;
+import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.util.io.BukkitObjectOutputStream;
 
 import java.io.*;
@@ -67,6 +69,10 @@ public class Storage {
         } catch (IOException | ClassNotFoundException e) {
             Logs.Log(e.getMessage());
         }
+    }
+
+    public static FileConfiguration GetConfig(){
+        return JavaPlugin.getPlugin(HerbsOfLife.class).getConfig();
     }
 }
 
